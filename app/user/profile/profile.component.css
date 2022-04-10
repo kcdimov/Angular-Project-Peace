@@ -1,0 +1,50 @@
+.profile-page{
+  display: flex;
+  width: 100%;
+  margin-bottom: 200px;
+}
+.profile {
+  margin-top: 150px;
+  margin-left: 100px;
+  margin-right: 100px;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  max-height: 545vh;
+}
+
+
+.profile-i  {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 250px;
+  background-color: rgb(12, 39, 70);
+}
+.profile-i i{
+  font-size: 230px;
+  color: white;
+  text-align: center;
+  width: 100%;
+  margin-top: 23px;
+}
+.user-info{
+  font-size: 25px;
+}
+
+.user-info p{
+  text-align: center;
+  color: rgb(40, 81, 128);
+}
+
+.edit-btn a{
+  text-decoration: none;
+  background-color: rgb(12, 39, 70);
+  padding: 16px 92px;
+  border: none;
+  font-size: 30px;
+  border-radius: 5px;
+  color: white;
+}

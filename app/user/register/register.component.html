@@ -1,0 +1,111 @@
+<p>register works!</p>
+
+<section class="register-form">
+  <section class="register-logo">
+    <i class="fab fa-pushed"></i>
+    <h1>Platform</h1>
+  </section>
+  <form class="register" [formGroup]="form" (ngSubmit)="registerHandler()">
+    <label for="firstName">
+      <input formControlName="firstName" type="text" name="firstName" id="firstName" placeholder="First Name"
+             [minLength]="3" required>
+    </label>
+    <ng-container *ngIf="form.get('firstName')?.touched">
+      <div class="alert alert-danger" *ngIf="form.get('firstName')?.errors?.['required']">
+        Please enter First Name
+      </div>
+      <div class="alert alert-danger" *ngIf="form.get('firstName')?.errors?.['minLength']">
+        First Name must be at least 3 characters
+      </div>
+    </ng-container>
+
+    <label for="lastName">
+      <input formControlName="lastName" type="text" name="lastName" id="lastName" placeholder="Last Name"
+             [minLength]="3" required>
+    </label>
+    <ng-container *ngIf="form.get('lastName')?.touched">
+      <div class="alert alert-danger" *ngIf="form.get('lastName')?.errors?.['required']">
+        Please enter Last Name
+      </div>
+      <div class="alert alert-danger" *ngIf="form.get('lastName')?.errors?.['minLength']">
+        Last Name must be at least 3 characters
+      </div>
+    </ng-container>
+
+    <label for="email">
+      <i class="far fa-envelope-open"></i>
+      <input formControlName="email" [appCustomValidator]="emailValidator"  type="email" name="email" id="email"
+             placeholder="Enter email" required>
+    </label>
+    <ng-container>
+      <div class="alert alert-danger" *ngIf="emailIsTaken">
+        Already have user with this email
+      </div>
+    </ng-container>
+    <ng-container >
+      <div class="alert alert-danger" *ngIf="form.get('email')?.touched && form.get('email')?.errors?.['required']">
+        Please enter email!
+      </div>
+      <div class="alert alert-danger" *ngIf="form.get('email')?.touched && email.errors?.['email']">
+        Enter valid email!
+      </div>
+    </ng-container>
+
+<!--    <p class="field field-icon">-->
+<!--      <label for="tel">-->
+<!--        <span>-->
+<!--          <i class="fas fa-phone"></i>-->
+<!--        </span>-->
+<!--&lt;!&ndash;        <select name="tel"  class="tel">&ndash;&gt;&ndash;&gt;-->
+<!--          &lt;!&ndash;        <option value="1">+359</option>&ndash;&gt;-->
+<!--          &lt;!&ndash;      </select>&ndash;&gt;-->
+<!--          <input formControlName="phone" type="text" name="tel" id="tel" placeholder="888 888">-->
+
+<!--      </label>-->
+
+<!--    </p>-->
+<!--    <ng-container>-->
+<!--      <div class="alert alert-danger" *ngIf="form.controls['phone'].touched">-->
+<!--        The phone number is required and must be 9 digits!-->
+<!--      </div>-->
+<!--      &lt;!&ndash;suppress AngularUndefinedBinding &ndash;&gt;-->
+<!--      <div class="alert alert-danger" *ngIf="form.controls['phone'].errors?.['pattern']">-->
+<!--        The phone number input field must be a 9 digit number.-->
+<!--      </div>-->
+<!--    </ng-container>-->
+
+    <label for="password">
+
+      <i class="fas fa-lock"></i>
+      <input formControlName="password" type="password" name="password" id="password" placeholder="Enter Password"
+             [minLength]="4" required>
+    </label>
+    <ng-container *ngIf="form.get('password')?.touched">
+      <div class="alert alert-danger" *ngIf="form.get('password')?.errors?.['required']">
+        Please enter password
+      </div>
+      <div class="alert alert-danger" *ngIf="form.get('password')?.errors?.['minLength']">
+        Password must be at least 4 characters
+      </div>
+    </ng-container>
+
+    <label for="confirmPassword">
+      <i class="fas fa-lock"></i>
+      <input formControlName="confirmPassword" type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password"
+             [minLength]="4" required>
+    </label>
+    <ng-container *ngIf="form.get('confirmPassword')?.touched">
+      <div class="alert alert-danger" *ngIf="form.get('confirmPassword')?.errors?.['required']">
+        Please enter password
+      </div>
+      <div class="alert alert-danger" *ngIf="form.get('confirmPassword')?.errors?.['minLength']">
+        Password must be at least 4 characters
+      </div>
+      <div class="alert alert-danger" *ngIf="form.get('confirmPassword')?.errors?.['passwordsDontMatch']">
+        Both passwords must match
+      </div>
+    </ng-container>
+
+    <button class="submit-btn">Submit</button>
+  </form>
+</section>

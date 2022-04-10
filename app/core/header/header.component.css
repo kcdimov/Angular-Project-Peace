@@ -1,0 +1,81 @@
+@import 'https://use.fontawesome.com/releases/v5.15.2/css/all.css';
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Lato, sans-serif;
+}
+
+
+
+.mini-navbar-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: blue;
+  color: antiquewhite;
+}
+.logo {
+  font-weight: bold;
+  font-size: 32px;
+  margin-left: 24px;
+  font-family: Lora, sans-serif;
+}
+.mini-navbar ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mini-navbar ul li {
+  list-style: none;
+  padding: 15px 12px;
+  margin: 0 1px;
+
+}
+
+.mini-navbar ul li a {
+  color: antiquewhite;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 24px;
+  font-family: Lato, sans-serif;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  background-color: yellow;
+  justify-content: center;
+  align-items: center;
+  /*max-width: 1350px;*/
+  /*margin: 0 20px;*/
+}
+.links nav ul{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 0;
+}
+
+.links nav ul li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 15px 32px;
+  margin: 0 1px;
+
+}
+
+.links nav ul li a {
+  text-decoration: none;
+  color: #767171;
+  font-weight: bold;
+  font-size: 24px;
+  font-family: 'Playfair Display', sans-serif;
+}
+

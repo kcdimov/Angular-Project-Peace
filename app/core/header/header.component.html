@@ -1,0 +1,51 @@
+<header>
+  <div class="mini-navbar-wrap">
+    <div class="logo-wrap">
+      <p class="logo"><span class="logo">HELP PLATFORM</span></p>
+    </div>
+<!--    <div class="mini-navbar" >-->
+    <div class="mini-navbar" *ngIf="!isLogged">
+      <ul>
+        <li>
+          <a routerLink="/login"  routerLinkActive="active">Login</a>
+        </li>
+        <li>
+          <a routerLink="/register"  routerLinkActive="active">Register</a>
+        </li>
+      </ul>
+    </div>
+<!--    <div class="mini-navbar">-->
+    <div class="mini-navbar" *ngIf="isLogged">
+      <ul>
+        <li>
+<!--          <a routerLink="/profile"  routerLinkActive="active">Steven's Profile</a>-->
+          <a routerLink="/profile">{{email}}'s Profile</a>
+        </li>
+        <li >
+          <a href="" (click)="logout()">Logout</a>
+<!--          <a href="#" (click)="logoutHandler()">Logout</a>-->
+        </li>
+      </ul>
+    </div>
+  </div>
+  <article class="links">
+    <nav>
+      <ul>
+        <li>
+          <a routerLink="/home">Home</a>
+        </li>
+        <li>
+          <a routerLink="/accommodation">Accommodation</a>
+        </li>
+        <li>
+          <a routerLink="/jobs">Job places</a>
+        </li>
+        <li>
+          <a routerLink="/info">Useful Info</a>
+        </li>
+      </ul>
+    </nav>
+  </article>
+<!--  <router-outlet></router-outlet>-->
+</header>
+<router-outlet></router-outlet>

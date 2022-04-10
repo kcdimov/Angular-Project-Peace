@@ -1,0 +1,75 @@
+
+<section class="signIn-from">
+  <section class="singIn-logo">
+    <i class="fas fa-user-circle"></i>
+  </section>
+  <form class="signIn" [formGroup]="form" (ngSubmit)="editProfile()">
+    <label for="firstName">
+      <i class="fas fa-user-circle"></i>
+      <input formControlName="firstName" type="text" name="firstName" id="firstName" placeholder="Enter First Name"
+      required [minLength]="3">
+    </label>
+    <ng-container>
+      <p class="error" *ngIf="form.get('firstName')?.touched && form.get('firstName')?.errors?.['required']">
+        PLease enter First Name!
+      </p>
+      <p class="error" *ngIf="form.get('firstName')?.touched && form.get('firstName')?.errors?.['minLength']">
+        First Name must be minimum 3 characters
+      </p>
+    </ng-container>
+    <label for="lastName">
+      <input formControlName="lastName" type="text" name="lastName" id="lastName" placeholder="Enter Last Name"
+      required [minLength]="3">
+    </label>
+    <ng-container>
+      <p class="error" *ngIf="form.get('lastName')?.touched && form.get('lastName')?.errors?.['required']">
+        Please enter Last Name!
+      </p>
+      <p class="error" *ngIf="form.get('lastName')?.touched && form.get('lastName')?.errors?.['minLength']">
+        Last Name must be minimum 3 characters!
+      </p>
+    </ng-container>
+    <label for="newPassword">
+      <input formControlName="newPassword" type="password" id="newPassword" name="newPassword" placeholder="****"
+      required [minLength]="4">
+    </label>
+    <ng-container>
+      <p class="error" *gnIf="form.get('newPassword')?.touched && form.get('newPassword')?.errors?.['required']">
+        Please enter new password!
+      </p>
+      <p class="error" *gnIf="form.get('newPassword')?.touched && form.get('newPassword')?.errors?.['minLength']">
+        Password must be minimum 4 symbols!
+      </p>
+    </ng-container>
+    <label for="oldPassword">
+      <input formControlName="oldPassword" type="password" id="oldPassword" name="oldPassword" placeholder="****"
+      required [minLength]="4">
+    </label>
+    <ng-container>
+      <p class="error" *ngIf="form.get('oldPassword')?.touched && form.get('oldPassword')?.errors?.['required']">
+        Please enter old password!
+      </p>
+      <p class="error" *ngIf="form.get('oldPassword')?.touched && form.get('oldPassword')?.errors?.['minlength']">
+        Password must be minimum 4 symbols
+      </p>
+    </ng-container>
+    <label for="confirmPassword">
+      <input formControlName="newPassword" type="password" id="confirmPassword" name="confirmPassword" placeholder="****"
+             required [minLength]="4">
+    </label>
+    <ng-container>
+      <p class="error" *gnIf="form.get('confirmPassword')?.touched && form.get('confirmPassword')?.errors?.['required']">
+        Please enter new password!
+      </p>
+      <p class="error" *gnIf="form.get('confirmPassword')?.touched && form.get('confirmPassword')?.errors?.['minLength']">
+        Password must be minimum 4 symbols!
+      </p>
+      <p class="error" *ngIf="form.get('confirmPassword')?.touched &&
+      form.get('confirmPassword')?.errors?.['passwordsDontMatch']">
+        Passwords don't match!
+      </p>
+    </ng-container>
+    <button class="btn-submit">Submit</button>
+  </form>
+</section>
+
