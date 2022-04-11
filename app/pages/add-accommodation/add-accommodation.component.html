@@ -12,7 +12,7 @@
               required minlength="5">
     </label>
     <ng-container *ngIf="postName.touched">
-      <p *ngIf="postName.errors?.required" class="error">
+      <p *ngIf="postName.errors?.['required']" class="error">
         Name is required!
       </p>
       <p *ngIf="postName.errors?.['minlength']" class="error">
@@ -20,10 +20,11 @@
       </p>
     </ng-container>
     <label for="description">
-      <input  #description="ngModel" ngModel  type="text" name="description" id="description" placeholder="Course Description" required minlength="20">
+      <input  #description="ngModel" ngModel  type="text" name="description" id="description"
+              placeholder="Course Description" required minlength="20">
     </label>
     <ng-container *ngIf="description.touched">
-      <p *ngIf="description.errors?.required" class="error">
+      <p *ngIf="description.errors?.['required']" class="error">
         Description is required!
       </p>
       <p *ngIf="description.errors?.['minLength']" class="error">
@@ -31,10 +32,11 @@
       </p>
     </ng-container>
     <label for="imageUrl">
-      <input  #imageUrl="ngModel" ngModel  type="text" name="imageUrl" id="imageUrl" placeholder="Image Url" required minlength="10">
+      <input  #imageUrl="ngModel" ngModel  type="text" name="imageUrl" id="imageUrl" placeholder="Image Url"
+              required minlength="10">
     </label>
     <ng-container *ngIf="imageUrl.touched">
-      <p *ngIf="imageUrl.errors?.required" class="error">
+      <p *ngIf="imageUrl.errors?.['required']" class="error">
         URL is required!
       </p>
       <p *ngIf="imageUrl.errors?.['minLength']" class="error">
