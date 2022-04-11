@@ -1,0 +1,46 @@
+<p>add-accommodation works!</p>
+
+<section class="addAccommodation-form">
+  <section class="addAccommodation-logo">
+    <i class="fas fa-home-heart"></i>
+<!--    <i class="fas fa-house-day"></i>-->
+  </section>
+  <form  class="addAccommodation" #form="ngForm" (ngSubmit)="addAccommodation(form)">
+
+    <label for="postName">
+      <input  #postName="ngModel" ngModel  type="text" name="postName" id="postName" placeholder="Accommodation Name"
+              required minlength="5">
+    </label>
+    <ng-container *ngIf="postName.touched">
+      <p *ngIf="postName.errors?.required" class="error">
+        Name is required!
+      </p>
+      <p *ngIf="postName.errors?.['minlength']" class="error">
+        Name must be at least 5 characters!
+      </p>
+    </ng-container>
+    <label for="description">
+      <input  #description="ngModel" ngModel  type="text" name="description" id="description" placeholder="Course Description" required minlength="20">
+    </label>
+    <ng-container *ngIf="description.touched">
+      <p *ngIf="description.errors?.required" class="error">
+        Description is required!
+      </p>
+      <p *ngIf="description.errors?.['minLength']" class="error">
+        Description must be at least 20 characters!
+      </p>
+    </ng-container>
+    <label for="imageUrl">
+      <input  #imageUrl="ngModel" ngModel  type="text" name="imageUrl" id="imageUrl" placeholder="Image Url" required minlength="10">
+    </label>
+    <ng-container *ngIf="imageUrl.touched">
+      <p *ngIf="imageUrl.errors?.required" class="error">
+        URL is required!
+      </p>
+      <p *ngIf="imageUrl.errors?.['minLength']" class="error">
+        URL must be at least 10 characters!
+      </p>
+    </ng-container>
+  </form>
+</section>
+
