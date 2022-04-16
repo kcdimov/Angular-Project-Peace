@@ -1,11 +1,14 @@
-<p>add-accommodation works!</p>
+
 
 <section class="addAccommodation-form">
   <section class="addAccommodation-logo">
-    <i class="fas fa-home-heart"></i>
-<!--    <i class="fas fa-house-day"></i>-->
+<!--    <i class="fas fa-home-heart"></i>-->
+<!--    <i class="far fa-house-day"></i>-->
+    <i class="fab fa-pushed"></i>
+<!--    <i class="fab fa-house"></i>-->
+    <h1>Add Job</h1>
   </section>
-  <form  class="addAccommodation" #form="ngForm" (ngSubmit)="addAccommodation(form)">
+  <form  class="addAccommodation" #form="ngForm" (submit)="addAccommodation(form)">
 
     <label for="postName">
       <input  #postName="ngModel" ngModel  type="text" name="postName" id="postName" placeholder="Accommodation Name"
@@ -22,12 +25,14 @@
     <label for="description">
       <input  #description="ngModel" ngModel  type="text" name="description" id="description"
               placeholder="Course Description" required minlength="20">
+<!--              [minLength]="20"-->
+
     </label>
-    <ng-container *ngIf="description.touched">
-      <p *ngIf="description.errors?.['required']" class="error">
+    <ng-container>
+      <p *ngIf="description.touched && description.errors?.['required']" class="error">
         Description is required!
       </p>
-      <p *ngIf="description.errors?.['minLength']" class="error">
+      <p *ngIf="description.touched && description.errors?.['minlength']" class="error">
         Description must be at least 20 characters!
       </p>
     </ng-container>
@@ -39,10 +44,11 @@
       <p *ngIf="imageUrl.errors?.['required']" class="error">
         URL is required!
       </p>
-      <p *ngIf="imageUrl.errors?.['minLength']" class="error">
-        URL must be at least 10 characters!
-      </p>
+<!--      <p *ngIf="imageUrl.errors?.['minlength']" class="error">-->
+<!--        URL must be at least 10 characters!-->
+<!--      </p>-->
     </ng-container>
+    <button class="submit-btn">Submit</button>
   </form>
 </section>
 

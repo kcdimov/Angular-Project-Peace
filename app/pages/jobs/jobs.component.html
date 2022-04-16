@@ -1,0 +1,23 @@
+<!--<p>jobs works!</p>-->
+
+
+<section class="main-job">
+  <section class="jobs" *ngFor="let job of jobs">
+    <article class="name">
+      <h1>
+        {{job.category}}
+      </h1>
+      <article class="position">
+        {{job.position}}
+      </article>
+    </article>
+
+    <label for="description">
+      <textarea name="description" id="description" cols="30" rows="30">
+        {{job.description}}
+      </textarea>
+    </label>
+  </section>
+</section>
+
+

@@ -58,19 +58,4 @@ export class LoginComponent implements OnInit {
   }
 
 
-  // handleLogin(): void {
-  //   this.errorMessage = '';
-  //   this.userService.login$(this.loginFormGroup.value).subscribe({
-  //     next: user=> {
-  //       console.log(user);
-  //       this.router.navigate(['/home']);
-  //     },
-  //     complete: () => {
-  //       console.log('login stream completed')
-  //   },
-  //     error: (err) => {
-  //       this.errorMessage = err.error.message();
-  //     }
-  //   })
-  // }
 }

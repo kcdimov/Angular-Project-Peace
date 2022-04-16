@@ -1,0 +1,40 @@
+
+section article {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 50px;
+  border: 1px solid black;
+  /*background-color: #846b6b;*/
+  background-color: #845353;
+}
+
+.links article p {
+  padding: 8px 28px;
+  margin: 0 20px;
+  color: antiquewhite;
+  font-family: Lora, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.links article a {
+  margin: 6px 12px;
+  text-decoration: none;
+  border: 2px solid antiquewhite;
+  border-radius: 25px;
+  font-weight: bold;
+  font-family: Lato, sans-serif;
+  color: antiquewhite;
+  padding: 10px 20px;
+}
+
+.links .auob p {
+  margin-right: 0;
+  padding-right: 50px;
+}
+
+.links .auob a {
+  white-space: nowrap;
+}

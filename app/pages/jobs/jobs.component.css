@@ -1,4 +1,7 @@
-.accommodations {
+
+
+
+.jobs {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -11,23 +14,40 @@
   background-color: #ce9063;
 }
 
+
 article h1 {
   text-align: center;
 }
-#description {
+#description, .position {
   font-family: Huricane, sans-serif;
-  height: 100px;
-  line-height: 1.5em;
-  text-align: justify;
-  padding: 6px 12px;
+  /*text-align: justify;*/
   border-radius: 25px;
   box-shadow: 1px 1px 23px 4px rgba(0,0,0,0.87);
   background-color: antiquewhite;
   text-decoration: none;
 }
-.image img {
-  /*width: 450px;*/
-  max-height: 350px;
-  min-height: 350px;
-  /*object-fit: cover;*/
+
+.position {
+  height: 50px;
+  padding: 6px 12px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 2.5em;
+  /*margin: 50px 500px;*/
 }
+
+#description {
+  height: 300px;
+  padding: 6px 12px;
+  line-height: 1.5em;
+  /*margin: 50px 100px;*/
+}
+#description p {
+  text-align: justify;
+  /*height: 300px;*/
+  /*padding: 16px 28px;*/
+  /*margin: 50px 80px;*/
+}
+
+

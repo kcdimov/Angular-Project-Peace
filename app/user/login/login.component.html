@@ -1,5 +1,4 @@
 
-
 <section class="signIn-form">
   <section class="signIn-logo">
     <i class="far fa-user"></i>
@@ -15,7 +14,8 @@
       <label for="email">
         <i class="far fa-envelope-open"></i>
 <!--        <input formControlName="email" type="email" name="email" id="email" placeholder="Enter email" required>-->
-        <input ngModel #email="ngModel"  [appCustomValidator]="emailValidator" type="email" name="email" id="email" placeholder="Enter email" required>
+        <input ngModel #email="ngModel"  [appCustomValidator]="emailValidator" type="email" name="email" id="email"
+               placeholder="Enter email" required>
       </label>
     </p>
 
@@ -26,13 +26,14 @@
     </ng-container>
     <p class="field field-icon">
       <label for="password">
-        <input  ngModel #password="ngModel" [minLength]="4" required name="password" type="password" id="password" placeholder="****">
+        <input  ngModel #password="ngModel" minlength="4" required name="password" type="password" id="password"
+                placeholder="****">
 <!--        <input formControlName="password" type="password" id="password" placeholder="*****">-->
       </label>
     </p>
      <ng-container *ngIf="password.touched">
        <div class="alert alert-danger" *ngIf="password.errors?.['required']">Password is required</div>
-       <div class="alert alert-danger" *ngIf="password.errors?.['minLength']">Password must be at least 4 characters</div>
+       <div class="alert alert-danger" *ngIf="password.errors?.['minlength']">Password must be at least 4 characters</div>
      </ng-container>
      <button class="submit-btn">Submit</button>
 <!--    <ng-container *ngIf="loginFormGroup.controls.['password'].touched && loginFormGroup.controls.['password'].invalid">-->

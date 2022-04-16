@@ -5,6 +5,8 @@ import {InfoComponent} from "./info/info.component";
 import {AccommodationsComponent} from "./accommodations/accommodations.component";
 import {AddAccommodationComponent} from "./add-accommodation/add-accommodation.component";
 import {AuthGuard} from "../core/guards/auth.guard";
+import {JobsComponent} from "./jobs/jobs.component";
+import {AddJobComponent} from "./add-job/add-job.component";
 
 const routes: Routes = [
   {
@@ -32,6 +34,30 @@ const routes: Routes = [
     //   isAdmin: true,
     //   authenticationFailureRedirectUrl: '/'
     // }
+  },
+  {
+    path: 'jobs',
+    // component: JobsComponent
+    children: [
+      {
+        path: '',
+        component: JobsComponent
+      },
+      {
+        path: ':jobId',
+        component: JobsComponent
+      }
+    ]
+
+  },
+  {
+    path: 'addJob',
+    component: AddJobComponent,
+    canActivate: [AuthGuard],
+    data: {
+      isAdmin: true,
+      authenticationFailureRedirectUrl: '/'
+    }
   }
 ]
 

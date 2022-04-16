@@ -14,7 +14,6 @@ import {AuthGuard} from "./guards/auth.guard";
   declarations: [
     HeaderComponent,
     FooterComponent,
-    //LoginComponent
   ],
   imports: [
     CommonModule,
@@ -34,14 +33,5 @@ import {AuthGuard} from "./guards/auth.guard";
   ]
 })
 export class CoreModule {
-  // static forRoot(): ModuleWithProviders<CoreModule> {
-  //   return {
-  //     ngModule: CoreModule,
-  //     providers: [
-  //       HeaderComponent,
-  //       UserService,
-  //      // storageServiceProvider
-  //     ]
-  //   }
-  // }
+
 }

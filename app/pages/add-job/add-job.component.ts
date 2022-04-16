@@ -3,14 +3,12 @@ import {PageServiceService} from "../page-service.service";
 import {Router} from "@angular/router";
 import {NgForm} from "@angular/forms";
 
-
 @Component({
-  selector: 'app-add-accommodation',
-  templateUrl: './add-accommodation.component.html',
-  styleUrls: ['./add-accommodation.component.css'],
-  exportAs: 'ngForm'
+  selector: 'app-add-job',
+  templateUrl: './add-job.component.html',
+  styleUrls: ['./add-job.component.css']
 })
-export class AddAccommodationComponent implements OnInit {
+export class AddJobComponent implements OnInit {
 
   @ViewChild('form', {read: NgForm, static: false})
   form!: NgForm;
@@ -22,19 +20,18 @@ export class AddAccommodationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addAccommodation(form: NgForm): void {
+  addJob (form: NgForm): void {
     if (form.invalid) {
       return
     }
-    const { postName, description, imageUrl } = form.value;
+    const { category, position, description } = form.value;
     console.log(form.value);
-    this.pageService.addAccommodation({postName, description, imageUrl}).subscribe({
+    this.pageService.addJob({category, position, description}).subscribe({
       next: () => {
         this.router.navigate(['/']);
       }, error: (err) => {
         console.log(err);
-    }
+      }
     })
   }
-
 }

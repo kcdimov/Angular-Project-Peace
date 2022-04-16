@@ -25,15 +25,12 @@ export class RegisterComponent implements OnInit {
     this.form = this.formBuilder.group({
       firstName: ['', [Validators.required, Validators.minLength(3)]],
       lastName: ['', [Validators.required, Validators.minLength(3)]],
-      email: ['', [Validators.required, Validators.email]],
-      phone:new FormControl ('', [Validators.pattern(this.phoneNumberPattern)]),
+      email: ['', [Validators.required, emailValidator]],
+     // phone:new FormControl ('', [Validators.pattern(this.phoneNumberPattern)]),
       password: ['', [Validators.required, Validators.minLength(4)]],
       confirmPassword: ['', [Validators.required, passwordsDontMatch( ()=> this.form?.get('password'),
         this.killSubscription)]]
     })
-  }
-  get email(): AbstractControl{
-    return this.form.controls['email'];
   }
 
   ngOnInit(): void {

@@ -1,7 +1,7 @@
 <header>
   <div class="mini-navbar-wrap">
     <div class="logo-wrap">
-      <p class="logo"><span class="logo">HELP PLATFORM</span></p>
+      <p class="logo"><span class="logo">HELP OF PEACE - PLATFORM</span></p>
     </div>
 <!--    <div class="mini-navbar" >-->
     <div class="mini-navbar" *ngIf="!isLogged">
@@ -37,12 +37,16 @@
         <li>
           <a routerLink="/accommodation">Accommodation</a>
         </li>
-<!--        <li *ngIf="isLogged">-->
-        <li >
+        <li *ngIf="isLogged">
+<!--        <li >-->
           <a routerLink="/addAccommodation">AddAccommodation</a>
         </li>
         <li>
           <a routerLink="/jobs">Job places</a>
+        </li>
+
+        <li *ngIf="isLogged && isAdmin" >
+          <a routerLink="/addJob">Add Job Position</a>
         </li>
         <li>
           <a routerLink="/info">Useful Info</a>

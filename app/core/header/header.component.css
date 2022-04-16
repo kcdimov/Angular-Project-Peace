@@ -41,6 +41,7 @@ body {
   font-weight: bold;
   font-size: 24px;
   font-family: Lato, sans-serif;
+  cursor: pointer;
 }
 
 .links {
@@ -77,5 +78,6 @@ body {
   font-weight: bold;
   font-size: 24px;
   font-family: 'Playfair Display', sans-serif;
+  cursor: pointer;
 }
 

@@ -1,0 +1,58 @@
+<!--<p>add-job works!</p>-->
+
+
+<section class="addJob-form">
+  <section class="addJob-logo">
+<!--        <i class="fas fa-home-heart"></i>-->
+    <!--    <i class="far fa-house-day"></i>-->
+        <i class="fab fa-pushed"></i>
+<!--    <i class="fab fa-house-day"></i>-->
+    <h1>Add Job</h1>
+  </section>
+  <form  class="addJob" #form="ngForm" (submit)="addJob(form)">
+
+    <label for="category">
+      <input  #category="ngModel" ngModel  type="text" name="category" id="category" placeholder="Job Category"
+              required minlength="5">
+    </label>
+    <ng-container *ngIf="category.touched">
+      <p *ngIf="category.errors?.['required']" class="error">
+        Category is required!
+      </p>
+      <p *ngIf="category.errors?.['minlength']" class="error">
+        Category must be at least 5 characters!
+      </p>
+    </ng-container>
+
+    <label for="position">
+      <input  #position="ngModel" ngModel  type="text" name="position" id="position" placeholder="Job Position"
+              required minlength="5">
+    </label>
+    <ng-container *ngIf="position.touched">
+      <p *ngIf="position.errors?.['required']" class="error">
+        Job position is required!
+      </p>
+      <p *ngIf="position.errors?.['minlength']" class="error">
+        Job position must be at least 5 characters!
+      </p>
+    </ng-container>
+    <label for="description">
+      <input  #description="ngModel" ngModel  type="text" name="description" id="description"
+              placeholder="Course Description" required minlength="20">
+      <!--              [minLength]="20"-->
+
+    </label>
+    <ng-container>
+      <p *ngIf="description.touched && description.errors?.['required']" class="error">
+        Description is required!
+      </p>
+      <p *ngIf="description.touched && description.errors?.['minlength']" class="error">
+        Description must be at least 20 characters!
+      </p>
+    </ng-container>
+
+    <button class="submit-btn">Submit</button>
+  </form>
+</section>
+
+
