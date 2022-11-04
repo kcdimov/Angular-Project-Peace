@@ -15,6 +15,6 @@ Users can register providing First Name, Last Name, an email and a password. Use
 
 App Platform is created via Angular and Java Spring.
 
-Back-end: Java Spring. MySql is used as database
-FinalProject
+Back-end: Java Spring. MySql is used as database.
+
 This project was generated with Angular CLI version 13.3.0.
